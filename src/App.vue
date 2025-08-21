@@ -8,12 +8,14 @@
     </header>
     <main class="p-4">
       <!-- Components will go here -->
+       <AddTask />
     </main>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
+import AddTask from './components/AddTask.vue'
 
 const theme = ref('light')
 
