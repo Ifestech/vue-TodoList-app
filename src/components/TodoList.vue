@@ -2,14 +2,16 @@
   <div>
     <!-- If tasks exist -->
     <div v-if="todos.length" class="space-y-2">
-      <TodoItem
-        v-for="(todo, index) in todos"
-        :key="index"
-        :todo="todo.text"
-        :completed="todo.completed"
-        @toggle-complete="(isCompleted) => $emit('toggle-complete', index, isCompleted)"
-        @delete-task="$emit('delete-task', index)"
-      />
+    <TodoItem
+  v-for="(todo, index) in todos"
+  :key="index"
+  :todo="todo.text"
+  :completed="todo.completed"
+  @toggle-complete="(isCompleted) => $emit('toggle-complete', index, isCompleted)"
+  @delete-task="$emit('delete-task', index)"
+  @edit-task="(newText) => $emit('edit-task', index, newText)"
+/>
+
     </div>
 
     <!-- Empty state -->
